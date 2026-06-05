@@ -148,7 +148,7 @@ func TestRecordOOM(t *testing.T) {
 func TestRecordFD(t *testing.T) {
 	tests := []struct {
 		name string
-		op   uint8
+		op   bpf.FDOp
 	}{
 		{
 			name: "fd_open",
@@ -207,9 +207,9 @@ func TestRecordSchedDelay(t *testing.T) {
 
 func TestCardinalityLimit(t *testing.T) {
 	tests := []struct {
-		name      string
-		calls     int
-		wantLast  bool
+		name     string
+		calls    int
+		wantLast bool
 	}{
 		{
 			name:     "at_limit",
